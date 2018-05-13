@@ -86,6 +86,14 @@ input("Aperte Enter para continuar...")
 # TODO: Conte cada gênero. Você não deveria usar uma função parTODO isso.
 male = 0
 female = 0
+feat_control = 0
+
+for i in data_list:
+    if data_list[feat_control][-2] == 'Male':
+        male += 1
+    elif data_list[feat_control][-2] == 'Female':
+        female += 1
+    feat_control += 1
 
 # Verificando o resultado
 print("\nTAREFA 4: Imprimindo quantos masculinos e femininos nós encontramos")
