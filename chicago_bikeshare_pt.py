@@ -137,9 +137,24 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função que pegue o gênero mais popular, e retorne este gênero como uma string.
 # Esperamos ver "Masculino", "Feminino", ou "Igual" como resposta.
 def most_popular_gender(data_list):
-    answer = ""
-    return answer
+    male = 0
+    female = 0
+    feat_control = 0
 
+    for i in data_list:
+        if data_list[feat_control][-2] == 'Male':
+            male += 1
+        elif data_list[feat_control][-2] == 'Female':
+            female += 1
+        feat_control += 1
+
+    if male > female:
+        answer = "Masculino"
+    elif male < female:
+        answer = "Feminino"
+    else:
+        answer = "Igual"
+    return answer
 
 print("\nTAREFA 6: Qual é o gênero mais popular na lista?")
 print("O gênero mais popular na lista é: ", most_popular_gender(data_list))
