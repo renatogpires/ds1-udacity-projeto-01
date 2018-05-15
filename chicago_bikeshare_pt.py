@@ -111,9 +111,17 @@ input("Aperte Enter para continuar...")
 def count_gender(data_list):
     male = 0
     female = 0
+    feat_control = 0
+
+    for i in data_list:
+        if data_list[feat_control][-2] == 'Male':
+            male += 1
+        elif data_list[feat_control][-2] == 'Female':
+            female += 1
+        feat_control += 1
+
     return [male, female]
-
-
+    
 print("\nTAREFA 5: Imprimindo o resultado de count_gender")
 print(count_gender(data_list))
 
