@@ -184,6 +184,7 @@ print("\nTAREFA 7: Verifique o gráfico!")
 def count_user_types(data_list):
     customer = 0
     subscriber = 0
+    dependent = 0
     feat_control = 0
 
     for i in data_list:
@@ -191,12 +192,17 @@ def count_user_types(data_list):
             customer += 1
         elif data_list[feat_control][-3] == 'Subscriber':
             subscriber += 1
+        elif data_list[feat_control][-3] == 'Dependent':
+            dependent += 1
         feat_control += 1
 
-    return [customer, subscriber]
+    input("Aperte Enter para mostrar os dependentes...")
+    print(dependent)
+
+    return [customer, subscriber, dependent]
 
 user_type_list = column_to_list(data_list, -3)
-types = ["Customer", "Subscriber"]
+types = ["Customer", "Subscriber", "Dependent"]
 quantity = count_user_types(data_list)
 y_pos = list(range(len(types)))
 plt.bar(y_pos, quantity)
