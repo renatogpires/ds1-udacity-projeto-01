@@ -196,9 +196,6 @@ def count_user_types(data_list):
             dependent += 1
         feat_control += 1
 
-    input("Aperte Enter para mostrar os dependentes...")
-    print(dependent)
-
     return [customer, subscriber, dependent]
 
 user_type_list = column_to_list(data_list, -3)
@@ -231,11 +228,48 @@ input("Aperte Enter para continuar...")
 # TODO: Ache a duração de viagem Mínima, Máxima, Média, e Mediana.
 # Você não deve usar funções prontas parTODO isso, como max() e min().
 trip_duration_list = column_to_list(data_list, 2)
-min_trip = 0.
-max_trip = 0.
+min_trip = float(trip_duration_list[1])
+max_trip = float(trip_duration_list[1])
 mean_trip = 0.
 median_trip = 0.
 
+# Cálculo de min_trip
+for i in trip_duration_list:
+    if float(i) < min_trip:
+        min_trip = float(i)
+    
+# Cálculo de max_trip
+for i in trip_duration_list:
+    if float(i) > max_trip:
+        max_trip = float(i)
+
+# Cálculo de mean_trip
+for i in trip_duration_list:
+    mean_trip = mean_trip + float(i)
+
+mean_trip = mean_trip / len(trip_duration_list)
+
+# Cálculo de median_trip
+quantidade = len(trip_duration_list)
+new_trip_duration_list = []
+
+for i in trip_duration_list:
+    new_trip_duration_list.append(float(i))
+trip_duration_list = sorted(new_trip_duration_list)
+
+mod = quantidade % 2
+
+if mod != 0:
+    meio = (quantidade // 2)
+    median_trip = trip_duration_list[meio]
+else:
+    meio = (quantidade // 2)
+    median_trip = (float(trip_duration_list[meio - 1]) + float(trip_duration_list[meio])) / 2
+
+min_trip = round(min_trip)
+max_trip = round(max_trip)
+mean_trip = round(mean_trip)
+median_trip = round(median_trip)
 
 print("\nTAREFA 9: Imprimindo o mínimo, máximo, média, e mediana")
 print("Min: ", min_trip, "Max: ", max_trip, "Média: ", mean_trip, "Mediana: ", median_trip)
