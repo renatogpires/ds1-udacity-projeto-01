@@ -61,6 +61,16 @@ while i < 20:
 input("Aperte Enter para continuar...")
 # TAREFA 3
 # TODO: Crie uma função para adicionar as colunas(features) de uma lista em outra lista, na mesma ordem
+# def column_to_list(param1: list, param2: int) -> list:
+"""
+    Função para extrair uma coluna de uma lista.
+    Argumentos:
+        param1: O primeiro parâmetro, uma lista.
+        param2: O segundo parâmetro, o índice da coluna da lista orginal.
+    Retorna:
+        Uma lista de valores extraídos da lista original.
+
+"""
 def column_to_list(data, index):
     column_list = []
     controle = 0
@@ -108,6 +118,15 @@ input("Aperte Enter para continuar...")
 # TAREFA 5
 # TODO: Crie uma função para contar os gêneros. Retorne uma lista.
 # Isso deveria retornar uma lista com [count_male, count_female] (exemplo: [10, 15] significa 10 Masculinos, 15 Femininos)
+# def count_gender(param1: list) -> list:
+"""
+    Função para contar os gêneros de uma lista.
+    Argumentos:
+        param1: O único parâmetro, uma lista.
+    Retorna:
+        Uma lista com dois itens, o total do gênero masculino e feminino.
+
+"""
 def count_gender(data_list):
     male = 0
     female = 0
@@ -136,6 +155,15 @@ input("Aperte Enter para continuar...")
 # TAREFA 6
 # TODO: Crie uma função que pegue o gênero mais popular, e retorne este gênero como uma string.
 # Esperamos ver "Masculino", "Feminino", ou "Igual" como resposta.
+# def most_popular_gender(param1: list) -> str:
+"""
+    Função verficiar qual o gênero mais popular dentro de uma lista.
+    Argumentos:
+        param1: O único parâmetro, uma lista.
+    Retorna:
+        Uma string do gênero com mais valores, "Masculino" ou "Feminino".
+
+"""
 def most_popular_gender(data_list):
     male = 0
     female = 0
@@ -180,7 +208,15 @@ input("Aperte Enter para continuar...")
 # TAREFA 7
 # TODO: Crie um gráfico similar para user_types. Tenha certeza que a legenda está correta.
 print("\nTAREFA 7: Verifique o gráfico!")
+# def count_user_types(param1: list) -> list:
+"""
+    Função para contar os tipos de usuários da lista.
+    Argumentos:
+        param1: O único parâmetro, uma lista.
+    Retorna:
+        Uma lista com três itens: a quantidade de customers, subscribers e dependents.
 
+"""
 def count_user_types(data_list):
     customer = 0
     subscriber = 0
