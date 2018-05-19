@@ -61,17 +61,17 @@ while i < 20:
 input("Aperte Enter para continuar...")
 # TAREFA 3
 # TODO: Crie uma função para adicionar as colunas(features) de uma lista em outra lista, na mesma ordem
-# def column_to_list(param1: list, param2: int) -> list:
-"""
-    Função para extrair uma coluna de uma lista.
-    Argumentos:
-        param1: O primeiro parâmetro, uma lista.
-        param2: O segundo parâmetro, o índice da coluna da lista orginal.
-    Retorna:
-        Uma lista de valores extraídos da lista original.
-
-"""
 def column_to_list(data, index):
+    # def column_to_list(param1: list, param2: int) -> list:
+    """
+        Função para extrair uma coluna de uma lista.
+        Argumentos:
+            param1: O primeiro parâmetro, uma lista.
+            param2: O segundo parâmetro, o índice da coluna da lista orginal.
+        Retorna:
+            Uma lista de valores extraídos da lista original.
+
+    """    
     column_list = []
     controle = 0
     # Dica: Você pode usar um for para iterar sobre as amostras, pegar a feature pelo seu índice, e dar append para uma lista
@@ -118,16 +118,16 @@ input("Aperte Enter para continuar...")
 # TAREFA 5
 # TODO: Crie uma função para contar os gêneros. Retorne uma lista.
 # Isso deveria retornar uma lista com [count_male, count_female] (exemplo: [10, 15] significa 10 Masculinos, 15 Femininos)
-# def count_gender(param1: list) -> list:
-"""
-    Função para contar os gêneros de uma lista.
-    Argumentos:
-        param1: O único parâmetro, uma lista.
-    Retorna:
-        Uma lista com dois itens, o total do gênero masculino e feminino.
-
-"""
 def count_gender(data_list):
+    # def count_gender(param1: list) -> list:
+    """
+        Função para contar os gêneros de uma lista.
+        Argumentos:
+            param1: O único parâmetro, uma lista.
+        Retorna:
+            Uma lista com dois itens, o total do gênero masculino e feminino.
+
+    """    
     male = 0
     female = 0
     feat_control = 0
@@ -155,16 +155,16 @@ input("Aperte Enter para continuar...")
 # TAREFA 6
 # TODO: Crie uma função que pegue o gênero mais popular, e retorne este gênero como uma string.
 # Esperamos ver "Masculino", "Feminino", ou "Igual" como resposta.
-# def most_popular_gender(param1: list) -> str:
-"""
-    Função verficiar qual o gênero mais popular dentro de uma lista.
-    Argumentos:
-        param1: O único parâmetro, uma lista.
-    Retorna:
-        Uma string do gênero com mais valores, "Masculino" ou "Feminino".
-
-"""
 def most_popular_gender(data_list):
+    # def most_popular_gender(param1: list) -> str:
+    """
+        Função verficiar qual o gênero mais popular dentro de uma lista.
+        Argumentos:
+            param1: O único parâmetro, uma lista.
+        Retorna:
+            Uma string do gênero com mais valores, "Masculino" ou "Feminino".
+
+    """
     male = 0
     female = 0
     feat_control = 0
@@ -208,16 +208,16 @@ input("Aperte Enter para continuar...")
 # TAREFA 7
 # TODO: Crie um gráfico similar para user_types. Tenha certeza que a legenda está correta.
 print("\nTAREFA 7: Verifique o gráfico!")
-# def count_user_types(param1: list) -> list:
-"""
-    Função para contar os tipos de usuários da lista.
-    Argumentos:
-        param1: O único parâmetro, uma lista.
-    Retorna:
-        Uma lista com três itens: a quantidade de customers, subscribers e dependents.
-
-"""
 def count_user_types(data_list):
+    # def count_user_types(param1: list) -> list:
+    """
+        Função para contar os tipos de usuários da lista.
+        Argumentos:
+            param1: O único parâmetro, uma lista.
+        Retorna:
+            Uma lista com três itens: a quantidade de customers, subscribers e dependents.
+
+    """
     customer = 0
     subscriber = 0
     dependent = 0
@@ -350,13 +350,41 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função para contar tipos de usuários, sem definir os tipos
 # para que nós possamos usar essa função com outra categoria de dados.
 print("Você vai encarar o desafio? (yes ou no)")
-answer = "no"
+answer = "yes"
 
 def count_items(column_list):
-    item_types = []
-    count_items = []
-    return item_types, count_items
+    # def count_items(param1: list) -> list:
+    """
+        Função para contar itens de uma lista.
+        Argumentos:
+            param1: O único parâmetro, uma lista.
+        Retorna:
+            Uma lista de dois itens. O primeiro item contém uma lista de cada gênero encontrado e o segundo contém uma lista da soma dos gêneros.
 
+    """
+    item_types = []
+
+    for i in column_list:
+        item_types.append(i)
+        
+    item_types = set(item_types)
+
+    count_items = []
+    male = 0
+    female = 0
+    unknown = 0
+
+    for i in column_list:
+        if i.strip() == "":
+            unknown += 1
+        elif i == "Male":
+            male += 1
+        else:
+            female += 1
+    
+    count_items = [unknown, male, female]
+
+    return item_types, count_items
 
 if answer == "yes":
     # ------------ NÃO MUDE NENHUM CÓDIGO AQUI ------------
